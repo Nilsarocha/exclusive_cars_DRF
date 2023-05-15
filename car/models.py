@@ -21,7 +21,7 @@ class Car(TimestampedModel):
     class Meta:
         verbose_name = "Car"
         verbose_name_plural = "Cars"
-        ordering = ["create_at"]
+        ordering = ["-create_at"]
 
     def __str__(self):
         return f"{self.name}"
