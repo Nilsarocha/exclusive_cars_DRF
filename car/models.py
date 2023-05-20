@@ -5,7 +5,7 @@ import uuid
 from django.db import models
 
 # Exclusive_cars imports
-from utils.models import TimestampedModel
+from utils.models import BaseModel
 
 
 class ColorType(models.TextChoices):
@@ -21,7 +21,7 @@ class ColorType(models.TextChoices):
         return {choice.value: choice.label for choice in cls}
 
 
-class Car(TimestampedModel):
+class Car(BaseModel):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     stock = models.IntegerField()
     brand = models.CharField(max_length=50)
