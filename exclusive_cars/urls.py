@@ -26,5 +26,6 @@ urlpatterns = [
     url('api/', include('car.urls')),
     url('api/', include('utils.urls')),
     url('api/', include('authentication.urls')),
+    url('api/', include('electrical_exercises.urls')),
 
 ]
