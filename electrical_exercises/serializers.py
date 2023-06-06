@@ -1,7 +1,7 @@
 # Django and DRF imports
 from rest_framework import serializers
 
-# exclusive_cars imports
+# exclusive_Cars imports
 from electrical_exercises.models import Television
 from electrical_exercises.models import Fridge
 
@@ -12,13 +12,12 @@ class TelevisionSerializer(serializers.ModelSerializer):
         model = Television
         fields = "__all__"
 
-    def create(self, data):
-        television = Television.objects.create(**data)
-        return television
+    def create(self, validated_data):
+        return Television.objects.create(**validated_data)
 
-    def update(self, instance, data):  # PUT
-        instance.inches = data.get("inches", instance.inches)
-        instance.serial_number = data.get("serial_number", instance.serial_number)
+    def update(self, instance, validated_data):
+        instance.inches = validated_data.get('inches', instance.inches)
+        instance.serial_number = validated_data.get('serial_number', instance.serial_number)
         instance.save()
         return instance
 
