@@ -14,6 +14,12 @@ class UserSerializer(serializers.ModelSerializer):
         exclude = ['password']
 
 
+class UserProfileSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ["id", "first_name", "last_name", "email", "phone", "address"]
+
+
 class RegistrationSerializer(serializers.ModelSerializer):
 
     password = serializers.CharField(
@@ -63,3 +69,4 @@ class LoginSerializer(serializers.Serializer):
             }
         else:
             raise serializers.ValidationError('Invalid credentials')
+
