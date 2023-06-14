@@ -10,7 +10,7 @@ from rest_framework.filters import SearchFilter, OrderingFilter
 
 # exclusive_cars imports
 from .models import User
-from .serializers import (RegistrationSerializer, UserProfileSerializer, LoginSerializer)
+from .serializers import (RegistrationSerializer, UserProfileSerializer, LoginSerializer, UserSerializer)
 
 
 class RegisterViewSet(mixins.CreateModelMixin, GenericViewSet):
@@ -69,5 +69,5 @@ class UserViewSet(mixins.ListModelMixin, mixins.RetrieveModelMixin, GenericViewS
 
     def get_serializer_class(self):
         if self.action == 'me':
-            return UserProfileSerializer
+            return UserSerializer
         return self.serializer_class

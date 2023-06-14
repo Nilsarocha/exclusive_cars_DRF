@@ -6,6 +6,7 @@ from django.db import models
 
 # Exclusive_cars imports
 from utils.models import BaseModel
+from authentication.models import User
 
 
 class ColorType(models.TextChoices):
@@ -30,6 +31,7 @@ class Car(BaseModel):
     price = models.FloatField()
     color = models.CharField(max_length=50, choices=ColorType.choices)
     name = models.CharField(max_length=20)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     class Meta:
         verbose_name = "Car"
