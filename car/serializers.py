@@ -11,6 +11,15 @@ class ListCarSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Car
+        exclude = ["created_at", "updated_at", "deleted_at", "active"]
+
+
+class ListProfileCarSerializer(serializers.ModelSerializer):
+
+    color = serializers.ChoiceField(choices=ColorType.choices, source='get_color_display')
+
+    class Meta:
+        model = Car
         fields = "__all__"
 
 
