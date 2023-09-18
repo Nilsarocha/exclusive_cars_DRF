@@ -48,8 +48,10 @@ INSTALLED_APPS = [
     'django_filters',
     'car',
     'authentication',
+    'Actividad_18_09_2023',
     'electrical_exercises',
-    'ejercicios2'
+    'ejercicios2',
+
 ]
 
 MIDDLEWARE = [

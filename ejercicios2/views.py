@@ -7,8 +7,8 @@ from rest_framework.response import Response
 from rest_framework.viewsets import GenericViewSet, ModelViewSet
 
 # exclusive_cars imports
-from exercises2.models import Building, Floor
-from exercises2.serializers import ListBuildingSerializer, ListFloorSerializer, CreateFloorSerializer
+from ejercicios2.models import Building, Floor
+from ejercicios2.serializers import ListBuildingSerializer, ListFloorSerializer, CreateFloorSerializer
 
 
 class BuildingViewSet(mixins.CreateModelMixin,
